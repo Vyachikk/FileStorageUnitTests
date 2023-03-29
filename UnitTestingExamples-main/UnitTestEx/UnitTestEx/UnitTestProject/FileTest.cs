@@ -42,15 +42,15 @@ namespace UnitTestProject
 
         /*Тестирование конструктора класса*/
         [TestMethod]
-        [DataRow(FILE_PATH_STRING, CONTENT_STRING)]
+        [DataRow(FILE_PATH_STRING, CONTENT_STRING)] //Данные файла
         [DataRow(SPACE_STRING, SPACE_STRING)]
         public void TestConstructor(string filePath, string content)
         {
-            File file = new File(filePath, content);
+            File file = new File(filePath, content); //конструктор класса
 
-            Assert.IsNotNull(file);
-            Assert.AreEqual(filePath, file.GetFilename());
-            Assert.AreEqual(content.Length / 2.0, file.GetSize());
+            Assert.IsNotNull(file); //Проверка, что файл не null
+            Assert.AreEqual(filePath, file.GetFilename()); //Проверка совпадения пути файла и его имени
+            Assert.AreEqual(content.Length / 2.0, file.GetSize()); //Проверка совпадения размера файла
         }
 
         /*Тестирование слишком большого файла*/
@@ -59,9 +59,9 @@ namespace UnitTestProject
         [DataRow(SPACE_STRING, SPACE_STRING)]
         public void TestFileWithLongContent(string filePath, string content)
         {
-            File file = new File(filePath, content);
-            double actualSize = file.GetSize();
-            Assert.AreEqual(content.Length / 2.0, actualSize);
+            File file = new File(filePath, content); //конструктор класса
+            double actualSize = file.GetSize(); //объявление текущего размера файла
+            Assert.AreEqual(content.Length / 2.0, actualSize); //Проверка совпадения размера файла с текущим размером
         }
 
         [TestMethod]
@@ -69,9 +69,9 @@ namespace UnitTestProject
         [DataRow(SPACE_STRING, SPACE_STRING)]
         public void TestFileWithEmptyContent(string filePath, string content)
         {
-            File file = new File(filePath, content);
-            int actualSize = (int)file.GetSize();
-            Assert.AreEqual(0, actualSize);
+            File file = new File(filePath, content); //конструктор класса
+            int actualSize = (int)file.GetSize(); //объявление текущего размера файла
+            Assert.AreEqual(0, actualSize); //проверка, имеет ли файл размер
         }
     }
 }

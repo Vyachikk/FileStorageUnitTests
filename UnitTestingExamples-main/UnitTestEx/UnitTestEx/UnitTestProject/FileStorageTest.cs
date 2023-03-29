@@ -43,7 +43,7 @@ namespace UnitTestProject
         new List<object[]>
         {
             new object[] { new File(REPEATED_STRING, CONTENT_STRING), REPEATED_STRING },
-            new object[] { new File(TIC_TOC_TOE_STRING, CONTENT_STRING), TIC_TOC_TOE_STRING }
+            new object[] { new File(TIC_TOC_TOE_STRING, CONTENT_STRING), TIC_TOC_TOE_STRING } //Здесь необходимо было исправить поле null на TIC_TOC_TOE_STRING
         };
 
         static IEnumerable<object[]> NewExceptionFileData =>
@@ -119,7 +119,7 @@ namespace UnitTestProject
             File actualfile = storage.GetFile(expectedFile.GetFilename());
             bool difference = actualfile.GetFilename().Equals(expectedFile.GetFilename()) && actualfile.GetSize().Equals(expectedFile.GetSize());
 
-            Assert.IsTrue(difference, string.Format("There is some differences in {0} or {1}", expectedFile.GetFilename(), expectedFile.GetSize()));
+            Assert.IsTrue(difference, string.Format("There is some differences in {0} or {1}", expectedFile.GetFilename(), expectedFile.GetSize())); //Для корректной работы файла необходимо поменять IsFalse на IsTrue
         }
 
     }
