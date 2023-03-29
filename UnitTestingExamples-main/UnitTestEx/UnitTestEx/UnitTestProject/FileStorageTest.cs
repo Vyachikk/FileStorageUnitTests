@@ -29,7 +29,8 @@ namespace UnitTestProject
         public FileStorage storage = new FileStorage(NEW_SIZE);
 
         /* ПРОВАЙДЕРЫ */
-
+        //Для исправления ошибок в тестах необходимо переделать массив объектов в перечисляемый список объектов, т.к. это позволяет
+        //использовать DynamicData в тестах
         static IEnumerable<object[]> NewFilesData =>
         new List<object[]>
         {
