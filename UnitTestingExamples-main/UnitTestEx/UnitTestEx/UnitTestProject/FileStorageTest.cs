@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -40,17 +39,17 @@ namespace UnitTestProject
         };
 
         static IEnumerable<object[]> FilesForDeleteData =>
-            new List<object[]>
-            {
+        new List<object[]>
+        {
             new object[] { new File(REPEATED_STRING, CONTENT_STRING), REPEATED_STRING },
             new object[] { new File(TIC_TOC_TOE_STRING, CONTENT_STRING), TIC_TOC_TOE_STRING }
-            };
+        };
 
         static IEnumerable<object[]> NewExceptionFileData =>
-            new List<object[]>
-            {
+        new List<object[]>
+        {
             new object[] { new File(REPEATED_STRING, CONTENT_STRING) }
-            };
+        };
 
         /* Тестирование записи файла */
         [TestMethod, DynamicData(nameof(NewFilesData))]
